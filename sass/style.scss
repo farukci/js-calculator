@@ -3,3 +3,12 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+body {
+    background: linear-gradient(to right, blue, green, white, pink, red, orange, yellow);
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+}
