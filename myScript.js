@@ -25,8 +25,6 @@ class Calculator {
         this.operation = operation;
         this.previousOperand = this.currentOperand;
         this.currentOperand = "";
-        // console.log(this.operation);
-
     }
     compute(){
         let computation;
@@ -52,7 +50,6 @@ class Calculator {
         this.currentOperand = computation;
         this.operation = undefined;
         this.previousOperand = "";
-
     }
     getDisplayNumber(number){
         const stringNumber = number.toString();
@@ -113,5 +110,10 @@ deleteButton.addEventListener("click", button => {
 
 allClearButton.addEventListener("click", button => {
     calculator.clear();
+    calculator.updateDisplay();
+})
+
+equalsButton.addEventListener("click", button => {
+    calculator.compute();
     calculator.updateDisplay();
 })
