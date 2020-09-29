@@ -42,6 +42,7 @@ class Calculator {
                 computation = previous * current;
                 break;
             case "÷":
+            case "/":
                 computation = previous / current;
                 break;
             default:
@@ -117,3 +118,40 @@ equalsButton.addEventListener("click", button => {
     calculator.compute();
     calculator.updateDisplay();
 })
+
+document.addEventListener('keydown', function(event) {
+    switch(event.keyCode) {
+        case 96:
+        case 97:
+        case 98:
+        case 99:
+        case 100:
+        case 101:
+        case 102:
+        case 103:
+        case 104:
+        case 105:
+            calculator.appendNumber(`${event.key}`);
+            calculator.updateDisplay();
+            break;
+        case 106:
+        case 107:
+        case 109:
+        case 111:
+            calculator.chooseOperation(`${event.key}`);
+            calculator.updateDisplay();
+            break;
+        case 13:
+            calculator.compute();
+            calculator.updateDisplay();
+            break;
+        case 8:
+            calculator.delete();
+            calculator.updateDisplay();
+            break;
+        case 46:
+            calculator.clear();
+            calculator.updateDisplay();
+            break;
+    }
+});
